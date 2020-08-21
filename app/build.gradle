@@ -1,0 +1,133 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+
+    defaultConfig {
+        applicationId "com.xiling.play"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../store_xiling.jks")
+            storePassword "xiling"
+            keyAlias "xiling"
+            keyPassword "xiling"
+        }
+
+        debug {
+            storeFile file("../store_xiling.jks")
+            storePassword "xiling"
+            keyAlias "xiling"
+            keyPassword "xiling"
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"https://xl-live.axiling.com/live-api/\"")
+            // 姜超
+           // buildConfigField("String", "BASE_URL", "\"http://192.168.1.123:8080/\"")
+            buildConfigField("Integer", "IM_APPID", "1400382075")
+            buildConfigField("String", "IM_SECRETKEY", "\"47a60922faef20770f7be11c8c31b964732d44b2211b2ed7f4fa83d97773b393\"")
+            buildConfigField("String", "XL_FROM", "\"2\"")
+
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField("String", "BASE_URL", "\"https://xl-live.axiling.com/live-api/\"")
+            buildConfigField("Integer", "IM_APPID", "1400382075")
+            buildConfigField("String", "IM_SECRETKEY", "\"47a60922faef20770f7be11c8c31b964732d44b2211b2ed7f4fa83d97773b393\"")
+            buildConfigField("String", "XL_FROM", "\"2\"")
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'   // aar目录
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.android.support:design:28.0.0'
+
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    api 'io.reactivex.rxjava2:rxjava:+'
+    api 'io.reactivex.rxjava2:rxandroid:+'
+
+
+    implementation(name: 'LiveRtmpPush', ext: 'aar')
+      implementation(name: 'base_mvp', ext: 'aar')
+    implementation(name: 'ijk_play', ext: 'aar')
+
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'com.squareup:otto:1.3.8'
+    api 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4'
+    api 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.4'
+    api 'tv.danmaku.ijk.media:ijkplayer-exo:0.8.4'
+
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    api 'com.tencent.imsdk:imsdk:4.8.50'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    implementation "com.android.support:recyclerview-v7:28.1.1"
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+
+    api 'com.squareup.retrofit2:retrofit:+'
+    api 'com.squareup.retrofit2:converter-gson:+'
+    api 'io.reactivex.rxjava2:rxjava:+'
+    api 'io.reactivex.rxjava2:rxandroid:+'
+    api 'com.squareup.retrofit2:adapter-rxjava2:+'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+
+    implementation 'com.blankj:utilcode:1.3.6'
+    implementation 'com.google.android:flexbox:0.2.6'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.2'
+    implementation 'com.just.agentweb:agentweb:1.2.6'
+    implementation 'com.bigkoo:convenientbanner:2.1.5'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+
+}

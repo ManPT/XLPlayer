@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/parent_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:showDividers="middle">
+
+        <ImageView
+            android:id="@+id/minusBtn"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:enabled="false"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_num_minus_selector" />
+
+        <com.xiling.play.view.KeyBoardEditText
+            android:id="@+id/valueTv"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:inputType="number"
+            android:gravity="center"
+            android:minWidth="33dp"
+            android:text="1"
+            android:textColor="@color/default_text_color"
+            android:background="@mipmap/icon_number"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/plusBtn"
+            android:layout_width="33dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_num_plus_selector" />
+    </LinearLayout>
+</LinearLayout>

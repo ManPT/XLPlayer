@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f5">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_300"
+        android:background="@drawable/bg_home_top" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_48"
+        android:text="喜领优选"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/sp_19" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_70"
+        android:text="AXLYX"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/sp_12" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userLayout"
+        android:layout_width="@dimen/dp_345"
+        android:layout_height="@dimen/dp_215"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_179"
+        android:background="@drawable/bg_rectangle_ff_7">
+
+        <ImageView
+            android:id="@+id/ivHead"
+            android:layout_width="@dimen/dp_69"
+            android:layout_height="@dimen/dp_69"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="#000000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_10"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="你好 老丸子"
+            android:textColor="#ff28242a"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ivHead"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDescribe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="喜领TV更多优选 GO!"
+            android:textColor="#ff28242a"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tvUserName"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="18669418322"
+            android:textColor="#ff28242a"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tvDescribe"
+            app:layout_constraintTop_toBottomOf="@id/tvDescribe" />
+
+
+        <View
+            android:id="@+id/lines"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_18"
+            android:background="@color/line"
+            app:layout_constraintLeft_toLeftOf="@id/tvDescribe"
+            app:layout_constraintRight_toRightOf="@id/ivHead"
+            app:layout_constraintTop_toBottomOf="@id/tvPhone" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerUserService"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tvPhone"
+            app:layout_constraintTop_toBottomOf="@id/lines"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userLayout"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/btnAddressManager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:paddingLeft="@dimen/dp_21"
+            android:paddingRight="@dimen/dp_21">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="地址管理"
+                android:textColor="#ff28242a"
+                android:textSize="@dimen/sp_16" />
+
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_9"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/icon_arrow_right" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_toLeftOf="@id/ivArrow"
+                android:text="设置修改收货地址"
+                android:textColor="#ffaaaaaa"
+                android:textSize="@dimen/sp_13" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_alignParentBottom="true"
+                android:background="#F8F8F8" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/btnHelpAndService"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:paddingLeft="@dimen/dp_21"
+            android:paddingRight="@dimen/dp_21">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="帮助与客服"
+                android:textColor="#ff28242a"
+                android:textSize="@dimen/sp_16" />
+
+
+            <ImageView
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_9"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/icon_arrow_right" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_alignParentBottom="true"
+                android:background="#F8F8F8" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnAccountSetting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:paddingLeft="@dimen/dp_21"
+            android:paddingRight="@dimen/dp_21">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="账户设置"
+                android:textColor="#ff28242a"
+                android:textSize="@dimen/sp_16" />
+
+
+            <ImageView
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_9"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/icon_arrow_right" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_alignParentBottom="true"
+                android:background="#F8F8F8" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="mainColor">#DCB982</color>
+    <color name="ddm_gray_ccc">#ccc</color>
+    <color name="backgroud_f2">#F2F2F2</color>
+    <color name="color_f5">#F5F5F5</color>
+    <color name="title_color">#202020</color>
+    <color name="default_text_color">#333333</color>
+    <!--设置界面分隔线颜色-->
+    <color name="line">#e5e5e5</color>
+    <color name="grayLight">#f0f0f0</color>
+
+    <!-- 售价文字颜色 -->
+    <color name="discount_price_color">#A6251A</color>
+    <!-- 划线价文字颜色 -->
+    <color name="min_market_price">#AAAAAA</color>
+
+</resources>

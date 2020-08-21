@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xiling.play.activity.IMGroupTestActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7F7F7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#D2D2D2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="57dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <EditText
+                android:id="@+id/chat_message_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/msg_editor_border"
+                android:maxHeight="120dp"
+                android:minHeight="30dp"
+                android:padding="5dp"
+                android:textCursorDrawable="@drawable/my_cursor" />
+
+            <!-- <ImageView
+                 android:id="@+id/face_btn"
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:layout_margin="5dp"
+                 android:scaleType="fitXY"
+                 android:src="@drawable/action_face_selector" />-->
+
+            <Button
+                android:id="@+id/send_btn"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="@drawable/message_send_border"
+                android:text="发送"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/more_groups"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_input"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
